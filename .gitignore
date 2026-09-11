@@ -1,0 +1,8 @@
+﻿# Ignorar credenciales locales de Liquibase y Databricks
+liquibase.properties
+
+# Archivos de sistema y logs
+*.log
+.DS_Store
+Thumbs.db
+
