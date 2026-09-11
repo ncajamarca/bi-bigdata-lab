@@ -1,0 +1,6 @@
+﻿# Plantilla de configuracion de Liquibase para Databricks
+changeLogFile=changelog/db.changelog-master.sql
+driver=com.databricks.client.jdbc.Driver
+url=jdbc:databricks://<SERVER_HOSTNAME>:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=<HTTP_PATH>;
+username=token
+password=<TU_DATABRICKS_PAT_TOKEN>
