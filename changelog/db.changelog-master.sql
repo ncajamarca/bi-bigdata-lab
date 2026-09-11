@@ -1,12 +1,1 @@
-﻿--liquibase formatted sql
-
---changeset ncajamarca:1
-CREATE SCHEMA IF NOT EXISTS bi_lab_cajamarca;
-
---changeset ncajamarca:2
-CREATE TABLE IF NOT EXISTS bi_lab_cajamarca.alumnos (
-    id INT,
-    nombre STRING,
-    carrera STRING
-);
-
+﻿--liquibase formatted sql`n`n--changeset ncajamarca:001`nCREATE SCHEMA IF NOT EXISTS main.bi_lab_cajamarca COMMENT 'Laboratorio 02 - BI y Big Data - UCV';`n`n--rollback DROP SCHEMA IF EXISTS main.bi_lab_cajamarca;
