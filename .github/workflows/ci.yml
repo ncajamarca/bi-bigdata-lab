@@ -16,8 +16,8 @@ jobs:
       - name: Setup Liquibase
         uses: liquibase/setup-liquibase@v2
         with:
-          version: '4.29.0'
-          edition: 'community'
+          version: '4.32.0'
+          edition: 'community''
 
       - name: Install Databricks extensions
         run: |
