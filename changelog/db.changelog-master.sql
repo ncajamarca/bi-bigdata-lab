@@ -1,1 +1,10 @@
-﻿--liquibase formatted sql`n`n--changeset ncajamarca:001`nCREATE SCHEMA IF NOT EXISTS main.bi_lab_cajamarca COMMENT 'Laboratorio 02 - BI y Big Data - UCV';`n`n--rollback DROP SCHEMA IF EXISTS main.bi_lab_cajamarca;
+﻿--liquibase formatted sql
+--changeset estudiante:001
+CREATE SCHEMA IF NOT EXISTS workspace.bi_lab_7003278197
+COMMENT 'Laboratorio 02 - BI y Big Data - UCV';
+--rollback DROP SCHEMA IF EXISTS workspace.bi_lab_7003278197;
+--changeset estudiante:002
+CREATE SCHEMA IF NOT EXISTS workspace.bi_staging_7003278197
+COMMENT 'Staging schema - BI and Big Data - Lab 03';
+
+--rollback DROP SCHEMA IF EXISTS workspace.bi_staging_7003278197;
