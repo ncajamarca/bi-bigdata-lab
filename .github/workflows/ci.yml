@@ -16,8 +16,13 @@ jobs:
       - name: Setup Liquibase
         uses: liquibase/setup-liquibase@v2
         with:
-          version: '4.32.0'
+          version: '5.0.4'
           edition: 'community'
+
+      - name: Install Databricks extensions
+        run: |
+          liquibase lpm add liquibase-databricks
+          liquibase lpm add databricks-jdbc
 
       - name: Validate changelog
         env:
@@ -28,7 +33,6 @@ jobs:
         run: |
           liquibase \
             --changelog-file=changelog/db.changelog-master.sql \
-            --driver=com.databricks.client.jdbc.Driver \
             --url="jdbc:databricks://${DATABRICKS_HOST}:443/default;AuthMech=3;httpPath=${DATABRICKS_HTTP_PATH};ConnCatalog=${DATABRICKS_CATALOG};ConnSchema=default;" \
             --username=token \
             --password="${DATABRICKS_TOKEN}" \
@@ -43,7 +47,6 @@ jobs:
         run: |
           liquibase \
             --changelog-file=changelog/db.changelog-master.sql \
-            --driver=com.databricks.client.jdbc.Driver \
             --url="jdbc:databricks://${DATABRICKS_HOST}:443/default;AuthMech=3;httpPath=${DATABRICKS_HTTP_PATH};ConnCatalog=${DATABRICKS_CATALOG};ConnSchema=default;" \
             --username=token \
             --password="${DATABRICKS_TOKEN}" \
@@ -58,7 +61,6 @@ jobs:
         run: |
           liquibase \
             --changelog-file=changelog/db.changelog-master.sql \
-            --driver=com.databricks.client.jdbc.Driver \
             --url="jdbc:databricks://${DATABRICKS_HOST}:443/default;AuthMech=3;httpPath=${DATABRICKS_HTTP_PATH};ConnCatalog=${DATABRICKS_CATALOG};ConnSchema=default;" \
             --username=token \
             --password="${DATABRICKS_TOKEN}" \
