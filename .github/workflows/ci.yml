@@ -17,12 +17,7 @@ jobs:
         uses: liquibase/setup-liquibase@v2
         with:
           version: '4.32.0'
-          edition: 'community''
-
-      - name: Install Databricks extensions
-        run: |
-          liquibase lpm add liquibase-databricks
-          liquibase lpm add databricks-jdbc
+          edition: 'community'
 
       - name: Validate changelog
         env:
